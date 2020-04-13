@@ -4,11 +4,13 @@
 Источник: https://metanit.com/
 
 Есть класс State, который представляет государство.
-Добавьте в класс оператор сложения, который бы позволял объединять государства (объединяется и площадь, и население).
+Добавьте в класс оператор сложения, который бы позволял объединять государства (складывается и площадь, и население).
 А также операторы сравнения < и > для сравнения государств по плотности населения (число людей / площадь).
 На вход программы поступает информация о двух странах. Необходимо вывести через пробел площадь и
-население этой страны для большей страны. Затем объединить эти две страны в одну и вывести через пробел её
+население большей страны. Затем объединить эти две страны в одну и вывести через пробел её
 площадь и население.
+Обработайте ситуации, когда население и площадь отрицательны, а также случай, когда площадь равно 0
+(в этом случае должен быть выброшен ArgumentException).
 
 Тестирование приложения выполняется путем запуска разных наборов тестов, например,
 на вход поступает две строки (первая строка - это площадь и население первой страны,
@@ -21,8 +23,7 @@
 
 Никаких дополнительных символов выводиться не должно.
 
-Код метода Main оставить без изменений (если очень хочется, то можно навести красоту и убрать,
-например, Parse, но в этой задаче неккоректных данных не будет).
+Код метода Main можно подвергнуть изменениям, но вывод меняться не должен.
 */
 
 namespace Task02
@@ -31,29 +32,6 @@ namespace Task02
     {
         public decimal Population { get; set; }
         public decimal Area { get; set; }
-
-        public static State operator +(State s1, State s2)
-        {
-            return new State
-            {
-                Population = s1.Population + s2.Population,
-                Area = s1.Area + s2.Area
-            };
-        }
-
-        public static bool operator >(State s1, State s2)
-        {
-            return (s1.Population / s1.Area) > (s2.Population / s2.Area);
-        }
-        public static bool operator <(State s1, State s2)
-        {
-            return (s1.Population / s1.Area) < (s2.Population / s2.Area);
-        }
-
-        public override string ToString()
-        {
-            return Area + " " + Population;
-        }
     }
 
     class MainClass
@@ -61,20 +39,27 @@ namespace Task02
         public static void Main()
         {
             string[] strs = Console.ReadLine().Split();
-            State state1 = new State { Area = int.Parse(strs[0]), Population = int.Parse(strs[1]) };
-            strs = Console.ReadLine().Split();
-            State state2 = new State { Area = int.Parse(strs[0]), Population = int.Parse(strs[1]) };
+            try
+            {
+                State state1 = new State { Area = int.Parse(strs[0]), Population = int.Parse(strs[1]) };
+                strs = Console.ReadLine().Split();
+                State state2 = new State { Area = int.Parse(strs[0]), Population = int.Parse(strs[1]) };
 
-            if (state1 > state2)
-            {
-                Console.WriteLine(state1);
-            } else
-            {
-                Console.WriteLine(state2);
+                if (state1 > state2)
+                {
+                    Console.WriteLine(state1);
+                }
+                else
+                {
+                    Console.WriteLine(state2);
+                }
+
+                State state3 = state1 + state2;
             }
-
-            State state3 = state1 + state2;
-
+            catch (ArgumentException)
+            {
+                Console.WriteLine("error");
+            }
             Console.WriteLine(state3);
         }
     }
