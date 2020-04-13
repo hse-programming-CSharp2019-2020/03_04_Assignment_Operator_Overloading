@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task01", "03_04_Assignment_Operator_Overloading\Task01.csproj", "{025B5F2C-36F1-476A-AF40-2E6F9B1E66FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task02", "Task02\Task02.csproj", "{767BEFFE-1FB9-4F98-AA42-8E8BB7518BB9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{025B5F2C-36F1-476A-AF40-2E6F9B1E66FC}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{025B5F2C-36F1-476A-AF40-2E6F9B1E66FC}.Debug|anycpu.Build.0 = Debug|anycpu
+		{025B5F2C-36F1-476A-AF40-2E6F9B1E66FC}.Release|anycpu.ActiveCfg = Release|anycpu
+		{025B5F2C-36F1-476A-AF40-2E6F9B1E66FC}.Release|anycpu.Build.0 = Release|anycpu
+		{767BEFFE-1FB9-4F98-AA42-8E8BB7518BB9}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{767BEFFE-1FB9-4F98-AA42-8E8BB7518BB9}.Debug|anycpu.Build.0 = Debug|anycpu
+		{767BEFFE-1FB9-4F98-AA42-8E8BB7518BB9}.Release|anycpu.ActiveCfg = Release|anycpu
+		{767BEFFE-1FB9-4F98-AA42-8E8BB7518BB9}.Release|anycpu.Build.0 = Release|anycpu
+	EndGlobalSection
+EndGlobal
